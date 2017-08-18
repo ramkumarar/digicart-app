@@ -8,7 +8,7 @@ const settings = {
   entry: {
     bundle: [
       "react-hot-loader/patch",
-      "./src/frontend/index.js"
+      "./src/app/index.js"
     ]
   },
   output: {
@@ -23,6 +23,7 @@ const settings = {
   module: {
     rules: [
       {
+        exclude: /(node_modules)/,
         test: /\.js?$/,
         loader: 'babel-loader',
         options: {
@@ -32,7 +33,8 @@ const settings = {
             "react"
           ],
           plugins: [
-            "transform-node-env-inline"
+            "transform-node-env-inline",
+            "transform-decorators-legacy"
           ],
           env: {
             development: {
