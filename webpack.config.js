@@ -7,6 +7,7 @@ const settings = {
 
   entry: {
     bundle: [
+      "babel-polyfill",
       "react-hot-loader/patch",
       "./src/app/index.js"
     ]
@@ -34,7 +35,8 @@ const settings = {
           ],
           plugins: [
             "transform-node-env-inline",
-            "transform-decorators-legacy"
+            "transform-decorators-legacy",
+            "transform-async-to-generator"
           ],
           env: {
             development: {
